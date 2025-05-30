@@ -1,6 +1,6 @@
 # Foosball API ⚽
 
-![Foosball Table](https://plus.unsplash.com/premium_photo-1661893934486-bdf06cfcb2f7?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Zm9vc2JhbGx8ZW58MHx8MHx8fDA%3D)
+<img src="https://plus.unsplash.com/premium_photo-1661893934486-bdf06cfcb2f7?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Zm9vc2JhbGx8ZW58MHx8MHx8fDA%3D" alt="foosball logo" width="208" height="320" />
 
 Welcome to the **Foosball API**, a powerful backend built with **NestJS** to manage foosball games, track statistics, and enhance community engagement. Whether you're running casual matches or organizing competitive tournaments, this API provides the tools you need with a modular and scalable design.
 

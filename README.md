@@ -1,73 +1,183 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
-</p>
+# Foosball API ⚽
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+![Foosball Table](https://via.placeholder.com/800x200?text=Foosball+API+Logo) <!-- Replace with an actual foosball-related image if available -->
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+Welcome to the **Foosball API**, a powerful backend built with **NestJS** to manage foosball games, track statistics, and enhance community engagement. Whether you're running casual matches or organizing competitive tournaments, this API provides the tools you need with a modular and scalable design.
 
-## Description
+---
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## 🌟 Features
 
-## Installation
+### Game Component
+The **Game Component** is the core of the Foosball API, designed to manage and analyze foosball matches comprehensively.
 
-```bash
-$ npm install
-```
+- **Real-Time Statistics Tracking**:  
+  Track game statistics as they happen using **NestJS's WebSocket support**. Connect to our WebSocket endpoint to get live updates on scores, player actions, and game events. This feature is perfect for real-time dashboards or live match updates.
 
-## Running the app
+- **Retrieve Statistics by Games**:  
+  Access detailed statistics for any game, past or present, via RESTful endpoints. For example:
+  ```bash
+  GET /games/:id/stats
+  ```
+  Retrieve data like final scores, player contributions, and match duration to analyze performance or generate reports.
 
-```bash
-# development
-$ npm run start
+### Notification Listeners
+Stay informed with our event-driven **Notification Listeners**, built using **NestJS's event emitter module**.
 
-# watch mode
-$ npm run start:dev
+- **Listening for Game Start Events**:  
+  The system listens for events like the start of a game and instantly notifies subscribed clients or services, ensuring you never miss a kickoff.
 
-# production mode
-$ npm run start:prod
-```
+- **MVP Polls**:  
+  After a game ends, an MVP poll is launched. Players and spectators can vote for the Most Valuable Player through the API, with results aggregated in real-time for an interactive experience.
 
-## Test
+### Telegram Integration
+The **Telegram Integration** feature connects your foosball community directly to Telegram for seamless communication.
 
-```bash
-# unit tests
-$ npm run test
+- **Sending Messages**:  
+  Automatically send messages to your Telegram group for key events, such as:
+  - "Game has started between Player A and Player B!"
+  - "New tournament generated—check the schedule!"
+  Configure your Telegram bot token in the `.env` file to enable this feature.
 
-# e2e tests
-$ npm run test:e2e
+- **Tournament Schedule Screenshots**:  
+  Generate and send screenshots of tournament schedules to your Telegram group. These visuals help participants plan and discuss upcoming matches easily.  
+  ![Tournament Schedule Example](https://via.placeholder.com/600x400?text=Tournament+Schedule) <!-- Replace with actual screenshot -->
 
-# test coverage
-$ npm run test:cov
-```
+### Organizations
+The **Organizations** feature lets you manage foosball activities within specific groups.
 
-## Support
+- **Track Statistics Inside Your Organization**:  
+  Create an organization (e.g., for your company or club) to track isolated statistics. Monitor leaderboards, win rates, and player performance specific to your group, making it ideal for internal leagues or friendly competitions.
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+### Seasons
+Organize your foosball data with the **Seasons** feature.
 
-## Stay in touch
+- **Seasonal Management**:  
+  Define seasons to segment games, tournaments, and statistics over time. This allows you to:
+  - Reset stats for a fresh start each season
+  - Compare performance across seasons
+  - Archive past seasons for historical reference  
+  Seasons keep your data structured and meaningful.
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+### Player Statistics
+Get detailed insights into player performance with the **Player Statistics** feature.
 
-## License
+- **Available Statistics**:  
+  Access a wide range of metrics for each player, such as:
+  - Win/loss record
+  - Goals scored and conceded
+  - Win rate percentage
+  - Performance trends over time
+  - Head-to-head stats against opponents  
+  Retrieve this data via:
+  ```bash
+  GET /players/:id/stats
+  ```
+  Use these stats to build leaderboards, analyze skills, or integrate with other tools.
 
-Nest is [MIT licensed](LICENSE).
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+- **Node.js** (v14 or higher)
+- **MongoDB** (local or cloud-hosted)
+- **Git**
+
+### Installation
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/vkorop/foosball-api.git
+   ```
+
+2. **Switch to the Dev Branch**:
+   ```bash
+   cd foosball-api
+   git checkout dev
+   ```
+
+3. **Install Dependencies**:
+   ```bash
+   npm install
+   ```
+
+4. **Configure Environment Variables**:
+   - Copy the example `.env` file:
+     ```bash
+     cp .env.example .env
+     ```
+   - Update `.env` with your MongoDB connection string, Telegram bot token, and other settings (e.g., `PORT`).
+
+5. **Launch the Server**:
+   ```bash
+   npm run start:dev
+   ```
+   The API will be available at `http://localhost:3000` (or your configured port).
+
+---
+
+## 🛠️ API Endpoints
+
+### 🎮 Games
+- **Create a Game**  
+  `POST /games`  
+  **Request**:  
+  ```json
+  {
+    "player1": "playerID1",
+    "player2": "playerID2"
+  }
+  ```  
+  **Response**:  
+  ```json
+  {
+    "id": "gameID",
+    "player1": "playerID1",
+    "player2": "playerID2",
+    "score": { "player1": 0, "player2": 0 },
+    "status": "ongoing"
+  }
+  ```
+
+- **Get Game Statistics**  
+  `GET /games/:id/stats`
+
+### 🏆 Players
+- **Get Player Statistics**  
+  `GET /players/:id/stats`  
+  **Response**:  
+  ```json
+  {
+    "id": "playerID",
+    "name": "John Doe",
+    "wins": 10,
+    "losses": 5,
+    "goalsScored": 25,
+    "winRate": 66.67
+  }
+  ```
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions! To get started:
+1. Fork the repository.
+2. Create a branch (`git checkout -b feature/your-idea`).
+3. Commit your changes (`git commit -m "Add your idea"`).
+4. Push to your branch (`git push origin feature/your-idea`).
+5. Submit a pull request.
+
+---
+
+## 📜 License
+
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
+
+---
+
+## 📬 Contact
+
+Have questions? Open an issue or reach out at [your-email@example.com](mailto:your-email@example.com).
+
+_"Spin, score, and stats—Foosball API brings the game to life!"_

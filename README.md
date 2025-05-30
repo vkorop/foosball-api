@@ -1,6 +1,6 @@
 # Foosball API ⚽
 
-![Foosball Table](https://via.placeholder.com/800x200?text=Foosball+API+Logo) <!-- Replace with an actual foosball-related image if available -->
+![Foosball Table]([https://via.placeholder.com/800x200?text=Foosball+API+Logo](https://plus.unsplash.com/premium_photo-1661893934486-bdf06cfcb2f7?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Zm9vc2JhbGx8ZW58MHx8MHx8fDA%3D))
 
 Welcome to the **Foosball API**, a powerful backend built with **NestJS** to manage foosball games, track statistics, and enhance community engagement. Whether you're running casual matches or organizing competitive tournaments, this API provides the tools you need with a modular and scalable design.
 
@@ -41,7 +41,6 @@ The **Telegram Integration** feature connects your foosball community directly t
 
 - **Tournament Schedule Screenshots**:  
   Generate and send screenshots of tournament schedules to your Telegram group. These visuals help participants plan and discuss upcoming matches easily.  
-  ![Tournament Schedule Example](https://via.placeholder.com/600x400?text=Tournament+Schedule) <!-- Replace with actual screenshot -->
 
 ### Organizations
 The **Organizations** feature lets you manage foosball activities within specific groups.
@@ -178,6 +177,6 @@ This project is licensed under the MIT License. See [LICENSE](LICENSE) for detai
 
 ## 📬 Contact
 
-Have questions? Open an issue or reach out at [your-email@example.com](mailto:your-email@example.com).
+Have questions? Open an issue or reach out at [your-email@example.com](mailto:vlad.koropets@gmail.com).
 
 _"Spin, score, and stats—Foosball API brings the game to life!"_
